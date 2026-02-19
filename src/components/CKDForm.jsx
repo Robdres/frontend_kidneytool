@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { predict, generatePDF } from '../services/apiClient.js'
 import { mockPredict } from '../services/mockPredictionModel.js'
 import ResultsView from './ResultsView'
+import InfoTooltip from './InfoTooltip'
 import './CKDForm.css'
 
 function CKDForm({ onClose }) {
@@ -322,7 +323,12 @@ if (showPreview) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="bmi_category">{fieldLabels.bmi_category}:</label>
+            <label htmlFor="bmi_category">
+              {fieldLabels.bmi_category}
+              <InfoTooltip 
+                content="Índice de Masa Corporal (IMC) categorizado: Bajo peso (< 18.5), Normal (18.5-24.9), Sobrepeso (25-29.9), Obeso (≥ 30). El sobrepeso y la obesidad son factores de riesgo importantes para la enfermedad renal crónica."
+              />
+            </label>
             <select
               id="bmi_category"
               name="bmi_category"
@@ -364,7 +370,12 @@ if (showPreview) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="female_specific_conditions">{fieldLabels.female_specific_conditions}:</label>
+            <label htmlFor="female_specific_conditions">
+              {fieldLabels.female_specific_conditions}
+              <InfoTooltip 
+                content="Incluye condiciones como: Síndrome de Ovario Poliquístico (SOP), Diabetes Gestacional previa, Menopausia precoz, o uso prolongado de anticonceptivos orales. Estas condiciones pueden aumentar el riesgo de enfermedad renal crónica."
+              />
+            </label>
 
             <select
               id="female_specific_conditions"
@@ -464,7 +475,12 @@ if (showPreview) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="personal_history_dyslipidemia">{fieldLabels.personal_history_dyslipidemia}:</label>
+            <label htmlFor="personal_history_dyslipidemia">
+              {fieldLabels.personal_history_dyslipidemia}
+              <InfoTooltip 
+                content="La dislipidemia es la alteración de los niveles de lípidos (grasas) en la sangre, incluyendo colesterol alto, triglicéridos elevados, o niveles bajos de colesterol HDL (bueno). Es un factor de riesgo cardiovascular y renal."
+              />
+            </label>
             <select
               id="personal_history_dyslipidemia"
               name="personal_history_dyslipidemia"
@@ -552,7 +568,12 @@ if (showPreview) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="hba1c_elevated">{fieldLabels.hba1c_elevated}:</label>
+            <label htmlFor="hba1c_elevated">
+              {fieldLabels.hba1c_elevated}
+              <InfoTooltip 
+                content="La Hemoglobina Glicosilada (HbA1c) mide el promedio de glucosa en sangre durante los últimos 2-3 meses. Valores normales: < 5.7%. Prediabetes: 5.7-6.4%. Diabetes: ≥ 6.5%. Valores elevados indican mayor riesgo de complicaciones renales."
+              />
+            </label>
             <select
               id="hba1c_elevated"
               name="hba1c_elevated"
@@ -594,11 +615,16 @@ if (showPreview) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="microalbuminuria_category">{fieldLabels.microalbuminuria_category}:</label>
+            <label htmlFor="microalbuminuria_category">
+              {fieldLabels.microalbuminuria_category}
+              <InfoTooltip 
+                content="La microalbuminuria es la presencia de pequeñas cantidades de proteína (albúmina) en la orina. Es un indicador temprano de daño renal y un factor de riesgo importante para la enfermedad renal crónica. Se detecta mediante análisis de orina."
+              />
+            </label>
             <select
               id="microalbuminuria_category"
               name="microalbuminuria_category"
-              value={formData.ldl_cholesterol_pathological}
+              value={formData.microalbuminuria_category}
               onChange={handleInputChange}
               required
             >
@@ -629,7 +655,14 @@ if (showPreview) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="diabetes_risk_10_years_findrisk">{fieldLabels.diabetes_risk_10_years_findrisk}:</label>
+            <label htmlFor="diabetes_risk_10_years_findrisk">
+              {fieldLabels.diabetes_risk_10_years_findrisk}
+              <InfoTooltip 
+                content="FINDRISC (Finnish Diabetes Risk Score) es una herramienta que evalúa el riesgo de desarrollar diabetes tipo 2 en los próximos 10 años. La puntuación va de 0 a 26, donde valores mayores a 15 indican riesgo alto."
+                link="https://www.fisterra.com/herramientas/calcuFin/"
+                linkText="Calcular FINDRISC →"
+              />
+            </label>
             <input
               type="number"
               id="diabetes_risk_10_years_findrisk"
@@ -640,7 +673,12 @@ if (showPreview) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="metabolic_syndrome">{fieldLabels.metabolic_syndrome}:</label>
+            <label htmlFor="metabolic_syndrome">
+              {fieldLabels.metabolic_syndrome}
+              <InfoTooltip 
+                content="El Síndrome Metabólico es un conjunto de condiciones que incluyen: obesidad abdominal, presión arterial alta, niveles elevados de azúcar en sangre, y niveles anormales de colesterol o triglicéridos. Tener 3 o más de estas condiciones indica síndrome metabólico."
+              />
+            </label>
             <select
               id="metabolic_syndrome"
               name="metabolic_syndrome"

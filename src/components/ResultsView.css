@@ -25,6 +25,8 @@
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .results-container {
@@ -33,10 +35,12 @@
   width: 100vw;
   margin: 0;
   padding: 0;
+  padding-bottom: 150px;
   box-shadow: none;
   border-radius: 0;
   position: relative;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .results-header {
@@ -89,6 +93,8 @@
   overflow-y: visible;
   width: 100%;
   box-sizing: border-box;
+  flex: 1;
+  padding-bottom: 120px;
 }
 
 .prediction-section {
