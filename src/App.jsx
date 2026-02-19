@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/logo.png'
 import CKDForm from './components/CKDForm'
 import Footer from './components/Footer'
+import WarningModal from './components/WarningModal'
+import PersistentWarningFooter from './components/PersistentWarningFooter'
 import './App.css'
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <WarningModal />
       {/* Header */}
       <header className="app-header">
         <div className="header-content">
@@ -190,6 +193,9 @@ function App() {
 
       {/* Footer */}
       <Footer />
+      
+      {/* Persistent Warning Footer */}
+      <PersistentWarningFooter />
       
       {/* Form Modal */}
       {showForm && <CKDForm onClose={handleCloseForm} />}

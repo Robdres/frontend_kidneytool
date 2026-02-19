@@ -90,16 +90,19 @@ return (
             <div className="prediction-header">
               <span className="prediction-label">Probabilidad de CKD:</span>
               <span className="prediction-value" style={{ color: riskInfo.color }}>
-                {(predictionResult * 100).toFixed(1)}%
+                {typeof predictionResult === 'object' 
+                  ? `${predictionResult.probability}%` 
+                  : `${(predictionResult * 100).toFixed(1)}%`
+                }
               </span>
             </div>
             <div className="risk-level" style={{ color: riskInfo.color }}>
-              Nivel de Riesgo: {riskInfo.level}
+              Nivel de Riesgo: {typeof predictionResult === 'object' ? predictionResult.riskLevel : riskInfo.level}
             </div>
             <div className="prediction-description">
-              {predictionResult >= 0.7
+              {(typeof predictionResult === 'object' ? predictionResult.probabilityDecimal : predictionResult) >= 0.7
                 ? "Se recomienda consultar con un médico especialista para evaluación adicional."
-                : predictionResult >= 0.4
+                : (typeof predictionResult === 'object' ? predictionResult.probabilityDecimal : predictionResult) >= 0.4
                 ? "Se recomienda monitoreo regular y consulta médica preventiva."
                 : "Riesgo bajo. Mantener hábitos saludables y controles regulares."
               }

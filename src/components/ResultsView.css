@@ -420,6 +420,209 @@
   .pdf-download-section h3 {
     font-size: 1.3rem;
   }
+
+  /* Mobile results improvements */
+  .results-header {
+    padding: 15px 15px;
+  }
+
+  .results-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .close-button {
+    width: 28px;
+    height: 28px;
+    font-size: 22px;
+  }
+
+  .results-content {
+    padding: 20px 15px;
+  }
+
+  .prediction-section {
+    margin-bottom: 20px;
+  }
+
+  .prediction-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .prediction-card {
+    padding: 15px;
+  }
+
+  .prediction-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prediction-value {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  .risk-level {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .risk-factors {
+    margin-top: 15px;
+  }
+
+  .risk-factors h4 {
+    font-size: 0.95rem;
+  }
+
+  .factor-item {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  .summary-group {
+    padding: 15px;
+  }
+
+  .summary-group h4 {
+    font-size: 1rem;
+  }
+
+  .summary-item {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-header {
+    padding: 12px 12px;
+  }
+
+  .results-header h2 {
+    font-size: 1rem;
+  }
+
+  .close-button {
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+
+  .results-content {
+    padding: 15px 12px;
+  }
+
+  .prediction-section {
+    margin-bottom: 15px;
+  }
+
+  .prediction-section h3 {
+    font-size: 1rem;
+  }
+
+  .prediction-card {
+    padding: 12px;
+  }
+
+  .prediction-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .prediction-label {
+    font-size: 0.9rem;
+  }
+
+  .prediction-value {
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+
+  .risk-level {
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+
+  .prediction-description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  .risk-factors {
+    margin-top: 15px;
+  }
+
+  .risk-factors h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .factor-list {
+    padding-left: 15px;
+  }
+
+  .factor-item {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    line-height: 1.4;
+  }
+
+  .summary-section {
+    margin-top: 20px;
+  }
+
+  .summary-section h3 {
+    font-size: 1rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .summary-group {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .summary-group h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .summary-item {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    line-height: 1.3;
+  }
+
+  .results-actions {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 12px;
+    margin-top: 20px;
+  }
+
+  .btn-back,
+  .btn-download {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .pdf-download-section {
+    margin: 15px 12px;
+    padding: 15px;
+  }
+
+  .pdf-download-section h3 {
+    font-size: 1rem;
+  }
 }
 
 /* Scrollbar styling */

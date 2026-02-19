@@ -1,5 +1,5 @@
 // filepath: apiClient.js
-const API_BASE = " http://127.0.0.1:5000";
+const API_BASE = "http://127.0.0.1:5050";
 const logoBase64 = "";
 
 export async function getColumns() {
@@ -230,7 +230,6 @@ export const generatePDF = async (formData, predictionResult) => {
     throw new Error('Error al generar el reporte PDF. Por favor, inténtalo de nuevo.');
   }
 }
-
 
 export const checkHealth = async () => {
   try {

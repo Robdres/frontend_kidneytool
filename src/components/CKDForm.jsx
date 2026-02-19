@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { predict, generatePDF } from '../services/apiClient.js'
+import { mockPredict } from '../services/mockPredictionModel.js'
 import ResultsView from './ResultsView'
 import './CKDForm.css'
 
@@ -53,11 +54,19 @@ function CKDForm({ onClose }) {
     setIsLoading(true)
     setShowPreview(false)
     try {
-      const result = await predict(formData)
-      if (!result || !result.prediction) {
+      // Generate random processing time (2-5 seconds) to simulate real processing
+      const processingTime = Math.random() * 3000 + 2000
+      
+      await new Promise(resolve => setTimeout(resolve, processingTime))
+      
+      // Use mock model for now
+      const result = mockPredict(formData)
+      
+      if (!result) {
         throw new Error('Invalid prediction result')
       }
-      setPredictionResult(result.prediction)
+      
+      setPredictionResult(result)
       setShowResults(true)
     } catch (error) {
       console.error('Error during prediction:', error)

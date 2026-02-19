@@ -77,6 +77,7 @@ body {
 /* Main Content */
 .main-content {
   flex: 1;
+  padding-bottom: 120px; /* Space for fixed warning footer */
 }
 
 /* Hero Section */
@@ -441,6 +442,54 @@ body {
   .cta-button.large {
     padding: 15px 30px;
     font-size: 1.1rem;
+  }
+
+  /* Mobile header improvements */
+  .header-content {
+    padding: 0 15px;
+  }
+
+  .logo-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Mobile hero improvements */
+  .hero-content {
+    padding: 0 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  /* Mobile footer improvements */
+  footer {
+    padding: 30px 15px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
   }
 }
 
